@@ -1,5 +1,4 @@
 # Backward Chaining Example
-
 knowledge_base = {
     "mammal(A)": ["vertebrate(A)"],
     "vertebrate(A)": ["animal(A)"],
@@ -8,7 +7,6 @@ knowledge_base = {
     "flying('duck')": [],
     "mammal('cat')": []
 }
-
 def backward_chaining(goal):
     for rule, conclusions in knowledge_base.items():
         for c in conclusions:
@@ -19,8 +17,12 @@ def backward_chaining(goal):
         print(f"{goal} is a known fact")
         return True
     return False
-
-# Test queries
 backward_chaining("bird(A)")
 backward_chaining("animal(A)")
 backward_chaining("mammal('cat')")
+
+
+output:
+bird(A) derived from vertebrate(A),flying(A)
+animal(A) derived from vertebrate(A)
+mammal('cat') is a known fact
