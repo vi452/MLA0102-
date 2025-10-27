@@ -1,12 +1,9 @@
 from collections import deque
-
 goal = "123456780"
-
 def show(state):
     for i in range(0,9,3):
         print(state[i:i+3].replace('0','_'))
-    print("-----")
-
+    print("-----"
 def neighbors(state):
     i = state.index("0")
     r,c = divmod(i,3)
@@ -19,7 +16,6 @@ def neighbors(state):
             s[i],s[j]=s[j],s[i]
             res.append("".join(s))
     return res
-
 def bfs(start):
     q=deque([start])
     seen={start:None}
@@ -34,11 +30,11 @@ def bfs(start):
         for n in neighbors(s):
             if n not in seen:
                 seen[n]=s; q.append(n)
-
 start="123406758"
 path=bfs(start)
-
 for p in path: show(p)
+
+
 
 output:
 123
@@ -52,3 +48,4 @@ output:
 123
 456
 78_
+
