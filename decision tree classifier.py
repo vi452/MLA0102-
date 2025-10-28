@@ -20,3 +20,5 @@ result = predict(age, income)
 print("Predicted Output for [Age=40, Income=70000]:", "Yes" if result == 1 else "No")
 
 
+output:
+Predicted Output for [Age=40, Income=70000]: Yes
